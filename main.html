@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Card Element</title>
+    <style>
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: rgb(13, 6, 26);
+}
+
+.maincontainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px;
+}
+
+.cardelement{
+  position: relative;
+  width: 320px;
+  height: 450px;
+  margin: 30px;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+  background: rgb(32, 76, 86);
+  border-radius: 20px;
+  border-bottom-left-radius: 160px;
+  border-bottom-right-radius: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardelement:hover{
+  transform: rotateY(180deg);
+}
+
+.thefront{
+  position:absolute;
+  width:100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  backface-visibility: hidden;
+  background: #052127;
+  color: #333;
+  border-radius: 20px;
+  border-bottom-left-radius: 160px;
+  border-bottom-right-radius: 160px;
+  box-shadow: 0 10px 0 rgb(160, 211, 232),
+  inset 0 -15px 0 rgba(24, 61, 64, 0.25),
+  0 30px 0 rgba(177, 177, 177, 0.15); 
+}
+
+.thefront::before{
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150%;
+  background: linear-gradient(#00ccff,#d400d4);
+  animation: animate1 4s linear infinite;
+}
+.thefront::after{
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: #052127;
+  border-radius: 16px;
+}
+@keyframes animate1
+{
+  0%
+  {
+    transform: rotate(0deg);
+  }
+  100%
+  {
+    transform: rotate(360deg);
+  }
+}
+
+.therear{
+  position:absolute;
+  width:100%;
+  height:100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #052127;
+  color: #333;
+  border-radius: 20px;
+  border-bottom-left-radius: 160px;
+  border-bottom-right-radius: 160px;
+  transform: rotateY(180deg);
+  box-shadow: 0 10px 0 #b2ebbd,
+  inset 0 -50px 0 rgba(33, 121, 34, 0.25),
+  0 30px 0 rgba(177, 177, 177, 0.15)
+}
+
+.therear::before{
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150%;
+  background: linear-gradient(#00ccff,#d400d4);
+  animation: animate2 4s linear infinite;
+}
+.therear::after{
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: #052127;
+  border-radius: 16px;
+}
+@keyframes animate2
+{
+  0%
+  {
+    transform: rotate(0deg);
+  }
+  100%
+  {
+    transform: rotate(-360deg);
+  }
+}
+.content{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+.content h2{
+  font-size: 1.75em;
+  color: #fff;
+  margin-bottom: 10px;
+  z-index: 10;
+}
+</style>
+  </head>
+  <body>
+<div class="maincontainer">
+  <div class="cardelement">
+    <div class="thefront">
+      <div class="content">
+      <h2>Card One</h2>
+      </div>
+    </div>
+    <div class="therear">
+      <div class="content">
+      <h2>MAY THE</h2>
+    </div>
+    </div>
+  </div>
+  <div class="cardelement">
+    <div class="thefront">
+      <div class="content">
+      <h2>Card Two</h2></div>
+    </div>
+    <div class="therear">
+      <div class="content">
+      <h2>SOURCE BE</h2>
+    </div>
+    </div>
+  </div>
+  <div class="cardelement">
+    <div class="thefront">
+      <div class="content">
+        <h2>Card Three</h2></div>
+    </div>
+    <div class="therear">
+      <div class="content">
+        <h2>WITH YOU</h2>
+      </div>
+    </div>
+  </div>
+</div>
+  </body>
+</html>
